@@ -235,3 +235,17 @@ Started GET "/posts/new" for 71.34.107.53 at 2019-02-11 18:39:43 +0000
 Processing by PostsController#new as HTML
   Rendered posts/new.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 71.34.107.53 at 2019-02-11 18:39:58 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WYgeX4TxdySw+FUOwX8jFtFDcymTAwcbNOltu8QExKU7pVyCrltBoEos14zeMtidB3tn2HmxwZIZwPTvFRYDNg==", "title"=>"Hesfsdf", "description"=>"My name is Leifur", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Hesfsdf"], ["description", "My name is Leifur"], ["created_at", "2019-02-11 18:39:58.303703"], ["updated_at", "2019-02-11 18:39:58.303703"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.9ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"posts", :id=>nil} missing required keys: [:id]):
+  app/controllers/posts_controller.rb:19:in `create'
+
+
